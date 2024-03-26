@@ -1,113 +1,146 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import Icon from "@/components/Icon";
+import { IconMinus } from "../constants/images";
+import images from "../constants/images";
+import { Carousel } from "@/components/Carousel";
 
 export default function Home() {
+  console.log("images", images);
+
+  const imagesBanner = {
+    Banner1: images.Banner1,
+    Banner2: images.Banner2,
+    Banner3: images.Banner3,
+  };
+
+  const imagesQuote = {
+    Quote1: images.Quote1,
+    Quote2: images.Quote2,
+    Quote3: images.Quote3,
+    Quote4: images.Quote4,
+    Quote5: images.Quote5,
+    Quote6: images.Quote6,
+  };
+  console.log("imagesBanner", imagesBanner);
+  console.log("imagesQuote", imagesQuote);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <>
+      <Carousel images={imagesBanner} dots={false} />
+      <div className="flex bg-[#441b12] bg-[url('../assets/images/Pattern-Khong-Gian-2.webp')] place-content-center">
+        <div className="text-[#f0a108] p-20 font-sans">
+          <p className="font-semibold text-5xl">Không gian Nhà hàng</p>
+          <div className="mt-5">
+            Với không gian thoáng đãng 3 tầng,
+            <p>Quán Cũ luôn sẵn sàng phục vụ từ khách lẻ</p>đến bữa tiệc đông
+            người.
+            <IconMinus
+              className="-ms-5"
+              color="#f0a108"
+              stroke={1}
+              width="100"
+              height="100"
             />
-          </a>
+          </div>
+        </div>
+        <div className="flex three__image m-20 overflow-hidden">
+          <Image
+            className=" mr-6 rounded-lg hover:scale-[1.1] transition duration-500"
+            src={images.KGNH1}
+            alt="khong-gian-quan"
+          />
+          <Image
+            className="mx-5 rounded-sm hover:scale-[1.1] transition duration-500"
+            src={images.KGNH2}
+            alt="khong-gian-quan"
+          />
+          <Image
+            className="ml-5 rounded-lg hover:scale-[1.1] transition duration-500"
+            src={images.KGNH3}
+            alt="khong-gian-quan"
+          />
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      <div className="fixed top-20 right-0 scale-[1.5] bg-[url('../assets/images/callActionBackground.svg')] z-50 flex flex-col items-end justify-end">
+        {" "}
+        <Icon>
+          <Image className="mt-0.5  " src={images.MenuButton} />
+        </Icon>
+        <Icon link="https://zalo.me/0898286699">
+          <Image
+            className="mt-1 mr-1.5 animate-wiggle"
+            src={images.ZaloButton}
+            height={31.3}
+            width={31.3}
+          />
+        </Icon>
+        <Icon link="tel:0898286699">
+          <Image
+            className="my-2 mr-1.5 animate-wiggle"
+            src={images.CallButton}
+            height={31.3}
+            width={31.3}
+          />
+        </Icon>
+      </div>
+      <Icon link="https://m.me/quancuhn">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={images.MessengerButton}
+          height={100}
+          width={100}
+          className="fixed right-10 bottom-20 animate-bounce z-50"
+        />
+      </Icon>
+      <div className="relative  bg-gradient-to-t from-[#e89a07] to-[#441b12] place-content-center">
+        <Carousel
+          style="z-49 object-none "
+          images={imagesQuote}
+          perView={4}
+          dots={true}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      <div className="flex bg-[#441b12] place-content-center">
+        <div className="flex three__image pt-20 pl-80 overflow-hidden">
+          <iframe
+            className=""
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Ft1Z3pXwlPM?si=AoxabSyk7pdJNSIm"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="text-[#f0a108] p-20 font-sans">
+          <p className="font-semibold text-5xl text-balance whitespace-normal">
+            Ghé Quán Cũ thưởng thức Pa Pỉnh (Cá nướng dân tộc)
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="mt-5 w-100">
+            <p className="w-96 whitespace-normal">
+              Trong tiếng Thái, “Pa” có nghĩa là cá suối, Pa Pỉnh nghĩa là cá
+              gập nướng. Cá nướng xong sẽ thơm lừng, đủ hương vị chua, cay,
+              ngọt, mặn, đắng của các loại gia vị (kết hợp giữa rau thơm, thìa
+              là, riềng sả và đặc biệt: mắc khén).
+            </p>
+            <IconMinus
+              className="-ms-5"
+              color="#f0a108"
+              stroke={1}
+              width="100"
+              height="100"
+            />
+          </div>
+        </div>
       </div>
-    </main>
+      <div className=" w-full h-full place-content-center bg-black ">
+        <Image
+          className="object-cover w-full h-full"
+          src={images.AnhNhanVien}
+        />
+      </div>
+    </>
   );
 }
