@@ -19,6 +19,9 @@ import Banner2 from "../assets/images/AnhBannerWeb-QuanCu-05-PC-2048x896-1.webp"
 import Banner3 from "../assets/images/AnhBannerWeb-QuanCu-01-1-2048x1347-1-1024x674.webp";
 import AnhNhanVien from "../assets/images/AnhBannerWeb-02-NhanVien-1.webp";
 import AnhGioiThieu from "../assets/images/Group-1273.png";
+import LoadingMenu from "../assets/images/loading.png";
+import LoadingMenu1 from "../assets/images/loadingg.jpg";
+import BookingBackground from "../assets/images/bg-booking.jpg";
 
 import {
   IconCircleChevronLeft,
@@ -29,6 +32,7 @@ import {
   IconCalendarTime,
   IconCurrencyDollar,
   IconMapPin,
+  IconCalendarMonth,
 } from "@tabler/icons-react";
 const images = {
   logoQC,
@@ -60,6 +64,9 @@ const images = {
   IconMapPin,
   IconCurrencyDollar,
   IconCalendarTime,
+  LoadingMenu,
+  LoadingMenu1,
+  BookingBackground,
 };
 export default images;
 export {
@@ -71,4 +78,5 @@ export {
   IconMapPin,
   IconCurrencyDollar,
   IconCalendarTime,
+  IconCalendarMonth,
 };

@@ -1,19 +1,14 @@
-"use client";
-import { useState, useEffect } from "react";
-
-export default function Icon({ children, text, link }) {
-  const [isClicked, setIsClicked] = useState(false);
-  function handleClick() {
-    console.log("The link was clicked.");
-    setIsClicked(!isClicked);
-  }
-  useEffect(() => {
-    if (isClicked === true) window.location.href = link;
-  }, [isClicked]);
+export default function Icon({ children, text = "", link }) {
   return (
-    <div className="flex" onClick={handleClick}>
+    <div className="flex flex-row">
       {children}
-      <span className="self-center text-white/80 ms-1">{text}</span>
+      <a
+        href={link}
+        target="_blank"
+        className="flex flex-row self-center text-white/80 ms-1"
+      >
+        {text}
+      </a>
     </div>
   );
 }

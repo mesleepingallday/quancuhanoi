@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="flex flex-col place-items-center bg-[#5b2a1f] pt-40">
-        <p className="py-5 text-[#f0a108] text-4xl">
+        <p className="py-5 text-[#f0a108] text-4xl font-lora">
           Giới thiệu Nhà hàng Quán Cũ
         </p>
         <div className="grid gap-4 grid-cols-2">

@@ -1,36 +1,36 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import Icon from "@/components/Icon";
-import { IconMinus } from "../constants/images";
-import images from "../constants/images";
 import { Carousel } from "@/components/Carousel";
+import Image from "next/image";
+import images, { IconMinus } from "../constants/images";
+import ImageSlider from "@/components/ImageSlider";
 
 export default function Home() {
-  console.log("images", images);
+  const imagesArray = [
+    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
+    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
+    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
+    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
+  ];
 
-  const imagesBanner = {
-    Banner1: images.Banner1,
-    Banner2: images.Banner2,
-    Banner3: images.Banner3,
-  };
-
-  const imagesQuote = {
-    Quote1: images.Quote1,
-    Quote2: images.Quote2,
-    Quote3: images.Quote3,
-    Quote4: images.Quote4,
-    Quote5: images.Quote5,
-    Quote6: images.Quote6,
-  };
-  console.log("imagesBanner", imagesBanner);
-  console.log("imagesQuote", imagesQuote);
-
+  const imagesArray2 = [
+    "/_next/static/media/220812-QuoteBF-QCweb-1-1024x1024-1.b8a460cf.webp",
+    "/_next/static/media/220812-QuoteBF-QCweb-2-1024x1024-1.180ad373.webp",
+    "/_next/static/media/220812-QuoteBF-QCweb-3-1024x1024-1.05fb6498.webp",
+    "/_next/static/media/220812-QuoteBF-QCweb-4-1024x1024-1.7fddcdb7.webp",
+    "/_next/static/media/220812-QuoteBF-QCweb-5-1024x1024-1.5ad19bcf.webp",
+    "/_next/static/media/220812-QuoteBF-QCweb-6-1024x1024-1.bc4e21f2.webp",
+  ];
   return (
-    <>
-      <Carousel images={imagesBanner} dots={false} />
-      <div className="flex bg-[#441b12] bg-[url('../assets/images/Pattern-Khong-Gian-2.webp')] place-content-center">
-        <div className="text-[#f0a108] p-20 font-sans">
+    <div className="relative">
+      <div className="image-slider-container">
+        <ImageSlider
+          imageUrls={imagesArray}
+          bigStyle={`w-screen overflow-hidden top-0  transition ease-in-out duration-500`}
+          dots={false}
+        />
+      </div>
+      <div className="flex bg-[#441b12] bg-[url('../assets/images/Pattern-Khong-Gian-2.webp')] place-content-center overflow-y-hidden">
+        <div className="text-[#f0a108] p-20 font-lora">
           <p className="font-semibold text-5xl">Không gian Nhà hàng</p>
           <div className="mt-5">
             Với không gian thoáng đãng 3 tầng,
@@ -63,43 +63,15 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="fixed top-20 right-0 scale-[1.5] bg-[url('../assets/images/callActionBackground.svg')] z-50 flex flex-col items-end justify-end">
-        {" "}
-        <Icon>
-          <Image className="mt-0.5  " src={images.MenuButton} />
-        </Icon>
-        <Icon link="https://zalo.me/0898286699">
-          <Image
-            className="mt-1 mr-1.5 animate-wiggle"
-            src={images.ZaloButton}
-            height={31.3}
-            width={31.3}
+      <div className="relative bg-gradient-to-t from-[#e89a07] to-[#441b12] place-content-center">
+        <div className="image-slider-container">
+          <ImageSlider
+            imageUrls={imagesArray2}
+            bigStyle={`w-screen overflow-hidden transition ease-in-out duration-500`}
+            dots={false}
+            imagePerSlide={3}
           />
-        </Icon>
-        <Icon link="tel:0898286699">
-          <Image
-            className="my-2 mr-1.5 animate-wiggle"
-            src={images.CallButton}
-            height={31.3}
-            width={31.3}
-          />
-        </Icon>
-      </div>
-      <Icon link="https://m.me/quancuhn">
-        <Image
-          src={images.MessengerButton}
-          height={100}
-          width={100}
-          className="fixed right-10 bottom-20 animate-bounce z-50"
-        />
-      </Icon>
-      <div className="relative  bg-gradient-to-t from-[#e89a07] to-[#441b12] place-content-center">
-        <Carousel
-          style="z-49 object-none "
-          images={imagesQuote}
-          perView={4}
-          dots={true}
-        />
+        </div>
       </div>
       <div className="flex bg-[#441b12] place-content-center">
         <div className="flex three__image pt-20 pl-80 overflow-hidden">
@@ -107,14 +79,14 @@ export default function Home() {
             className=""
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/Ft1Z3pXwlPM?si=AoxabSyk7pdJNSIm"
+            src="https://www.youtube.com/embed/xpLAYCs36U8?si=97z-ESH9a_ufARZb"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
         </div>
-        <div className="text-[#f0a108] p-20 font-sans">
+        <div className="text-[#f0a108] p-20 font-lora">
           <p className="font-semibold text-5xl text-balance whitespace-normal">
             Ghé Quán Cũ thưởng thức Pa Pỉnh (Cá nướng dân tộc)
           </p>
@@ -135,12 +107,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" w-full h-full place-content-center bg-black ">
+      <div className=" place-content-center overflow-y-auto">
         <Image
-          className="object-cover w-full h-full"
+          className="w-full h-full overflow-hidden"
           src={images.AnhNhanVien}
         />
       </div>
-    </>
+    </div>
   );
 }
