@@ -13,11 +13,17 @@ export default function ImageSlider({
   slideStyle,
   imagePerSlide = 1,
 }) {
+  const className = require("classnames");
+  const widthImage = className({
+    "w-full": imagePerSlide === 1,
+    "w-1/3": imagePerSlide === 3,
+  });
   const [imageIndex, setImageIndex] = useState(0);
   const intervalRef = useRef();
   const swipeStartRef = useRef();
   const isSwipingRef = useRef(false);
   const length = imageUrls.length / imagePerSlide;
+  console.log(widthImage);
   function handleBack() {
     setImageIndex((index) => (index === 0 ? length - 1 : index - 1));
   }
@@ -72,16 +78,18 @@ export default function ImageSlider({
             className="absolute left-10 top-1/2 size-20 z-10"
             onClick={() => handleBack()}
           />
-          <div className={`flex flex-row ${bigStyle}`}>
+          <div className={`flex flex-row overflow-hidden ${bigStyle}`}>
             {imageUrls.map((url, idx) => (
               <img
                 key={url}
                 src={url}
                 alt="food"
-                className={`w-1/${imagePerSlide}`}
                 style={{
-                  transform: `translateX(${-300 * imageIndex}%)`,
+                  transform: `translateX(${
+                    -100 * imageIndex * imagePerSlide
+                  }%)`,
                 }}
+                className={`${widthImage} transition-transform duration-500`}
               />
             ))}
           </div>

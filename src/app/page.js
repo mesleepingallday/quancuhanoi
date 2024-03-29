@@ -3,7 +3,6 @@ import { Carousel } from "@/components/Carousel";
 import Image from "next/image";
 import images, { IconMinus } from "../constants/images";
 import ImageSlider from "@/components/ImageSlider";
-
 export default function Home() {
   const imagesArray = [
     "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
@@ -11,7 +10,6 @@ export default function Home() {
     "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
     "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
   ];
-
   const imagesArray2 = [
     "/_next/static/media/220812-QuoteBF-QCweb-1-1024x1024-1.b8a460cf.webp",
     "/_next/static/media/220812-QuoteBF-QCweb-2-1024x1024-1.180ad373.webp",
