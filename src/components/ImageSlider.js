@@ -89,7 +89,7 @@ export default function ImageSlider({
                     -100 * imageIndex * imagePerSlide
                   }%)`,
                 }}
-                className={`${widthImage} transition-transform duration-500`}
+                className={`${widthImage}  transition-transform duration-500`}
               />
             ))}
           </div>

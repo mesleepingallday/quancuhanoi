@@ -4,11 +4,11 @@ import Image from "next/image";
 import images, { IconMinus } from "../constants/images";
 import ImageSlider from "@/components/ImageSlider";
 export default function Home() {
+  console.log(images.Banner3);
   const imagesArray = [
     "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
-    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
-    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
-    "/_next/static/media/AnhBannerWeb-QuanCu-04-PC-2048x896-1.c579e9a8.webp",
+    "/_next/static/media/AnhBannerWeb-QuanCu-05-PC-2048x896-1.e2cc8a0e.webp",
+    "/_next/static/media/AnhBannerWeb-QuanCu-01-1-2048x1347-1-1024x674.fe6add2c.webp",
   ];
   const imagesArray2 = [
     "/_next/static/media/220812-QuoteBF-QCweb-1-1024x1024-1.b8a460cf.webp",
@@ -23,7 +23,8 @@ export default function Home() {
       <div className="image-slider-container">
         <ImageSlider
           imageUrls={imagesArray}
-          bigStyle={`w-screen overflow-hidden top-0  transition ease-in-out duration-500`}
+          bigStyle={`w-screen overflow-hidden top-0 transition ease-in-out duration-500`}
+          slideStyle={`w-screen`}
           dots={false}
         />
       </div>
@@ -109,6 +110,7 @@ export default function Home() {
         <Image
           className="w-full h-full overflow-hidden"
           src={images.AnhNhanVien}
+          alt="AnhNhanVien"
         />
       </div>
     </div>
