@@ -1,42 +1,86 @@
+/* eslint-disable react/jsx-key */
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { images } from "../constants";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseOutline } from "react-icons/io5";
+import { images, navLinks, sideNavLinks } from "../constants";
 import BookingNow from "./BookingNow";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const headerFontStyle =
-    "font-lora font-light text-2xl hover:underline hover:underline-offset-8";
+    "font-lora  hover:underline hover:underline-offset-8 text-2xl font-medium leading-normal";
+  const handleOpenNav = () => {
+    console.log("Open nav");
+    setIsOpen(!isOpen);
+  };
   return (
-    <header className="relative">
-      <nav className="nav__links flex items-center justify-center space-x-80 text-[#f0a108] bg-[#441b12] py-8">
-        <div className="header__left-links text-xl space-x-20">
-          <Link href="/gioi-thieu" className={headerFontStyle}>
-            Giới thiệu
-          </Link>
-          <Link href="/thuc-don" className={headerFontStyle}>
-            Thực đơn
-          </Link>
-          <Link
-            href="https://www.facebook.com/quancuhn"
-            className={headerFontStyle}
-          >
-            Điểm tin
-          </Link>
-        </div>
-        <div className="header__right-links text-xl space-x-20">
-          <Link href="mon-ngon" className={headerFontStyle}>
-            Món ngon quán cũ
-          </Link>
-          <BookingNow text="Đặt bàn ngay" style={headerFontStyle}>
-            Đặt bàn ngay
-          </BookingNow>
-        </div>
-      </nav>
-      <div className="header__logo absolute mt-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+    <header className="relative z-30 w-full">
+      <nav className=" flex justify-around items-center max-container p-5 text-[#f0a108] bg-[#441b12]">
         <Link href="/">
-          <Image src={images.logoQC} alt="logo" width={200} height={200} />
+          <Image
+            src={images.logoQC}
+            alt="logo"
+            className="m-0 left-0 w-[200px] h-[200px] lg:absolute lg:left-1/2 lg:transform lg:translate-x-[-50%] max-lg:w-[50px] max-lg:h-[50px] max-lg:relative max-lg:-left-10"
+          />
         </Link>
-      </div>
+        {isOpen && (
+          <div className="fixed h-full w-screen lg:hidden backdrop-blur-sm top-0 right-0 z-50">
+            <section className="absolute bg-[#441b12] right-0 top-0 h-screen p-8 gap-8 z-50 w-1/3">
+              <IoCloseOutline
+                onClick={handleOpenNav}
+                className="absolute right-10 mt-0 mb-8 text-3xl cursor-pointer"
+              />
+              <section className="grid grid-rows-3 gap-8 mt-10 place-items-center">
+                {sideNavLinks.map(({ label, href }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    className={`${headerFontStyle}`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+                <section className="row-start-8 bg-orange-900 rounded-full py-4 px-8 shadow-lg">
+                  <BookingNow
+                    text="Đặt bàn ngay"
+                    style={`font-lora text-xl leading-normal font-medium`}
+                  >
+                    Đặt bàn ngay
+                  </BookingNow>
+                </section>
+              </section>
+            </section>
+          </div>
+        )}
+        <div className="flex-1 flex gap-20 max-lg:hidden lg:justify-around lg:ml-10">
+          {navLinks.map((item) => (
+            <div className="flex gap-20">
+              {item.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className={`${headerFontStyle} text-xl`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="hidden max-lg:block">
+          <GiHamburgerMenu onClick={handleOpenNav} />
+        </div>
+        <BookingNow
+          text="Đặt bàn ngay"
+          style={`${headerFontStyle} text-xl max-lg:hidden wide:mr-24`}
+        >
+          Đặt bàn ngay
+        </BookingNow>
+      </nav>
     </header>
   );
 }

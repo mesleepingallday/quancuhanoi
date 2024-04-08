@@ -12,9 +12,9 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="absolute w-screen">
+    <footer>
       <div className="flex place-content-center justify-between ">
-        <div className="flex items-center flex-col flex-grow footer__layout-left bg-[#f0a108] text-[#441b12] p-20">
+        <div className="flex items-center flex-col flex-grow bg-[#f0a108] text-[#441b12] p-20">
           <p className="font-bold text-3xl">Nhà hàng Quán Cũ 106 Yết Kiêu</p>
           <p className="">Đặt bàn, đặt tiệc, khách đoàn: 089 828 66 99</p>
           <p className="">quancuhn@gmail.com</p>
@@ -147,7 +147,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="ps-60 flex bg-[#441b12] bg-[url('../assets/images/Pattern-Khong-Gian-2.webp')] py-3">
+        {/* <div className="ps-60 flex bg-[#441b12] bg-[url('../assets/images/Pattern-Khong-Gian-2.webp')] py-3">
           <ul className="flex flex-col items-center mx-20 my-10 text-white/80">
             <li className="self-center">Giờ mở cửa</li>
             <li>Mon: 10:00 am – 11:00 pm</li>
@@ -161,7 +161,7 @@ export default function Footer() {
             className="m-10"
             loading="lazy"
           ></iframe>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-row justify-between  bg-[#441b12] py-2">
         <div className="flex space-x-12 ms-10 my-3 ">

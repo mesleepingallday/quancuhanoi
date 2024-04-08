@@ -6,6 +6,7 @@ import {
 } from "../constants/images";
 
 export default function ImageSlider({
+  componentStyle,
   imageUrls,
   bigStyle,
   dots = true,
@@ -69,13 +70,13 @@ export default function ImageSlider({
   }, [imageUrls]);
 
   return (
-    <>
+    <section className={componentStyle}>
       <div className="relative flex flex-row justify-center items-center ">
         <div className={`relative flex ${slideStyle}`}>
           <IconCircleChevronLeft
             color="white"
             stroke="none"
-            className="absolute left-10 top-1/2 size-20 z-10"
+            className="absolute left-10 top-1/2 xl:size-20 wide:size-15 lg:size-10 z-10"
             onClick={() => handleBack()}
           />
           <div className={`flex flex-row overflow-hidden ${bigStyle}`}>
@@ -89,14 +90,14 @@ export default function ImageSlider({
                     -100 * imageIndex * imagePerSlide
                   }%)`,
                 }}
-                className={`${widthImage}  transition-transform duration-500`}
+                className={`${widthImage}  transition-transform duration-500 object-fill`}
               />
             ))}
           </div>
           <IconCircleChevronRight
             color="white"
             stroke="none"
-            className="absolute right-10 top-1/2 size-20 z-10"
+            className="absolute right-10 xl:size-20 wide:size-15 lg:size-10 top-1/2 z-10"
             onClick={() => handleNext()}
           />
         </div>
@@ -119,6 +120,6 @@ export default function ImageSlider({
           ))}
         </div>
       )}
-    </>
+    </section>
   );
 }

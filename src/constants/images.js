@@ -22,6 +22,7 @@ import AnhGioiThieu from "../assets/images/Group-1273.png";
 import LoadingMenu from "../assets/images/loading.png";
 import LoadingMenu1 from "../assets/images/loadingg.jpg";
 import BookingBackground from "../assets/images/bg-booking.jpg";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import {
   IconCircleChevronLeft,
@@ -64,6 +65,7 @@ const images = {
   IconMapPin,
   IconCurrencyDollar,
   IconCalendarTime,
+  GiHamburgerMenu,
   LoadingMenu,
   LoadingMenu1,
   BookingBackground,
@@ -79,4 +81,5 @@ export {
   IconCurrencyDollar,
   IconCalendarTime,
   IconCalendarMonth,
+  GiHamburgerMenu,
 };
