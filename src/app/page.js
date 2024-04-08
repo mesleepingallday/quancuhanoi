@@ -38,7 +38,7 @@ export default function Home() {
             <p>Quán Cũ luôn sẵn sàng phục vụ từ khách lẻ</p>đến bữa tiệc đông
             người.
             <IconMinus
-              className="-ms-5 max-lg:m-0 max-lg:w-[500px]"
+              className="-ms-5 max-lg:m-0 max-lg:w-[50px]"
               color="#f0a108"
               stroke={1}
               width="100"
@@ -46,20 +46,20 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex flex-row gap-5 my-20 mr-5 lg:my-10 wide:gap-10 col-span-2 lg:mr-5 max-lg:row-start-2 max-lg:m-0 max-lg:items-center max-lg:col-span-3 max-lg:gap-3">
+        <div className="grid grid-cols-3 my-20 mr-5 gap-5 lg:my-10 col-span-2 lg:mr-5 max-lg:row-start-2 max-lg:m-0 max-lg:items-center max-lg:col-span-3 max-lg:gap-3 place-items-center max-md:place-items-start">
           <Image
-            className="rounded-lg hover:scale-[1.1] hover:rounded-lg transition duration-500 max-md:object-contain max-md:w-1/4 max-md:h-[135px]"
+            className="rounded-lg hover:scale-[1.1] hover:rounded-lg transition duration-500 max-md:object-contain xl:ms-20 h-3/4 "
             e
             src={images.KGNH1}
             alt="khong-gian-quan"
           />
           <Image
-            className="rounded-sm hover:scale-[1.1] hover:rounded-sm transition duration-500 max-md:object-contain max-md:w-1/3"
+            className="rounded-sm hover:scale-[1.1] hover:rounded-sm transition duration-500 max-md:object-contain h-3/4 max-md:-ms-2"
             src={images.KGNH2}
             alt="khong-gian-quan"
           />
           <Image
-            className="rounded-lg hover:scale-[1.1] transition duration-500 max-md:object-contain max-md:w-1/3"
+            className="rounded-lg hover:scale-[1.1] transition duration-500 max-md:object-contain h-3/4"
             src={images.KGNH3}
             alt="khong-gian-quan"
           />
@@ -75,32 +75,27 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex bg-[#441b12] place-content-center">
-        <div className="flex three__image pt-20 pl-80 overflow-hidden">
-          <iframe
-            className=""
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/xpLAYCs36U8?si=97z-ESH9a_ufARZb"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div className="text-[#f0a108] p-20 font-lora">
-          <p className="font-semibold text-5xl text-balance whitespace-normal">
+      <div className="grid md:grid-cols-2 bg-[#441b12] place-content-center max-md:grid-rows-2 max-md:text-center max-md:place-items-center">
+        <iframe
+          className="lg:my-10 lg:ms-20 md:w-11/12 md:h-4/5 max-sm:w-3/4 max-sm:h-2/3"
+          src="https://www.youtube.com/embed/xpLAYCs36U8?si=97z-ESH9a_ufARZb"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+        <div className="text-[#f0a108] md:p-20 max-sm:p-10 font-lora max-md:grid max-md:col-start-1 ">
+          <p className="font-semibold text-5xl">
             Ghé Quán Cũ thưởng thức Pa Pỉnh (Cá nướng dân tộc)
           </p>
           <div className="mt-5 w-100">
-            <p className="w-96 whitespace-normal">
+            <p className="whitespace-normal">
               Trong tiếng Thái, “Pa” có nghĩa là cá suối, Pa Pỉnh nghĩa là cá
               gập nướng. Cá nướng xong sẽ thơm lừng, đủ hương vị chua, cay,
               ngọt, mặn, đắng của các loại gia vị (kết hợp giữa rau thơm, thìa
               là, riềng sả và đặc biệt: mắc khén).
             </p>
             <IconMinus
-              className="-ms-5"
+              className="md:-ms-5 max-sm:hidden"
               color="#f0a108"
               stroke={1}
               width="100"

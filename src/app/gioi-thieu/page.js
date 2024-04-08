@@ -8,21 +8,20 @@ import Image from "next/image";
 import images from "../../constants/images";
 
 export default function AboutPage() {
+  console.log("no internet");
   return (
     <>
-      <div className="flex flex-col place-items-center bg-[#5b2a1f] pt-40">
-        <p className="py-5 text-[#f0a108] text-4xl font-lora">
+      <div className="flex flex-col place-items-center bg-[#5b2a1f] pt-40 max-sm:pt-20">
+        <p className=" text-[#f0a108] text-4xl font-lora max-sm:text-center max-sm:text-[30px]">
           Giới thiệu Nhà hàng Quán Cũ
         </p>
-        <div className="grid gap-4 grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.329329205165!2d105.83963077632622!3d21.01950478062753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab786309da47%3A0x556753df17a97250!2zTmhhzIAgSGHMgG5nIFF1YcyBbiBDdcyD!5e0!3m2!1sen!2s!4v1706068385202!5m2!1sen!2s"
-            className="m-10 border border-brown-500 rounded-sm"
+            className="m-10 border border-brown-500 rounded-sm md:h-full"
             loading="lazy"
-            height={300}
-            width={400}
           ></iframe>
-          <div>
+          <div className="ml-5">
             <div className="grid gap-1 grid-rows-4 mt-16">
               <div className="flex items-center gap-2">
                 <IconMapPin
@@ -76,7 +75,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="w-1/2 mx-auto text-start text-[#f0a108]">
+        <div className="w-1/2 mx-auto text-start text-[#f0a108] md:my-10 max-sm:text-center">
           <p className="my-10 italic">
             Dưới bóng hoa sữa thơm, ấy là Quán Cũ với sự bình yên, ấm áp mà ta
             hoài tìm kiếm. Mang gam màu trầm ấm, Quán Cũ gợi về những nét thơ

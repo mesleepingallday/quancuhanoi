@@ -22,7 +22,7 @@ export default function MenuCategories() {
   };
 
   return (
-    <div className="flex flex-row flex-wrap justify-center mt-40 gap-5">
+    <div className="flex flex-row flex-wrap justify-center lg:mt-40 md:mt-10 max-sm:mt-10 gap-5">
       {categories.map((category, index) => (
         <Button
           key={index}

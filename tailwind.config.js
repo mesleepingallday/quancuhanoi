@@ -14,6 +14,15 @@ export default {
       "8xl": ["96px", "106px"],
     },
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 0.2s ease-in-out 0.5s infinite",
+      },
       fontFamily: {
         palanquin: ["Palanquin", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
@@ -28,10 +37,6 @@ export default {
       },
       boxShadow: {
         "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",
-      },
-      backgroundImage: {
-        hero: "url('assets/images/collection-background.svg')",
-        card: "url('assets/images/thumbnail-background.svg')",
       },
       screens: {
         wide: "1440px",

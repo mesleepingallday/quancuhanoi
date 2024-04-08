@@ -42,7 +42,7 @@ export default function BookingNow({ style = "", text = "Đặt bàn ngay!" }) {
   return (
     <Dialog>
       <DialogTrigger className={style}>{text}</DialogTrigger>
-      <DialogContent className="rounded-lg border-solid">
+      <DialogContent className="rounded-lg border-solid max-sm:scale-[0.8]">
         <div>
           <DialogHeader>
             <DialogTitle className="font-lora text-2xl ">
@@ -85,12 +85,9 @@ export default function BookingNow({ style = "", text = "Đặt bàn ngay!" }) {
             <Label htmlFor="time" className="text-center">
               Thời gian
             </Label>
-            <Input
-              type="datetime-local"
-              id="time"
-              {...register("time")}
-              className="col-span-2"
-            />
+            <label className="col-span-3">
+              <Input type="datetime-local" id="time" {...register("time")} />
+            </label>
           </div>
           <div className="grid grid-cols-4 gap-4 mt-5">
             <Label htmlFor="note" className="text-center mt-2">

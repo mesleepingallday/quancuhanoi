@@ -66,7 +66,7 @@ export default function Carousel() {
     <div>
       <ImageSlider
         imageUrls={imageUrls[category]}
-        bigStyle={`w-2/6 mt-10  border-2 border-[#f0a108] overflow-hidden transition duration-500  ease-in-out `}
+        bigStyle={`wide:w-2/6 lg:w-1/2  md:mt-5 md:w-2/3 max-sm:m-5  border-2 border-[#f0a108] overflow-hidden transition duration-500  ease-in-out `}
         smallStyle={`w-25 h-40`}
         slideStyle="justify-center items-center"
       />

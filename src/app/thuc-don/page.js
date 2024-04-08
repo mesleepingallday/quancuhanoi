@@ -1,9 +1,8 @@
 "use client";
-import MenuCategories from "./MenuCategories";
-import DetailMenu from "./DetailMenu";
-import Carousel from "./Carousel";
 import { createContext, useState } from "react";
+import Carousel from "./Carousel";
 import { CategoryStateProvider } from "./CategoryState";
+import MenuCategories from "./MenuCategories";
 
 const CategoryState = createContext();
 
